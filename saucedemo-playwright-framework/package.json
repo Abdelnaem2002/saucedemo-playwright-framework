@@ -1,0 +1,31 @@
+{
+  "name": "saucedemo-playwright-framework",
+  "version": "1.0.0",
+  "description": "Web UI test automation framework for SauceDemo using Playwright, TypeScript and the Page Object Model",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:auth": "playwright test tests/auth",
+    "test:navigation": "playwright test tests/navigation",
+    "test:forms": "playwright test tests/forms",
+    "test:functional": "playwright test tests/functional",
+    "report": "playwright show-report",
+    "report:summary": "tsx utils/generate-report.ts",
+    "typecheck": "tsc --noEmit",
+    "install:browsers": "playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
