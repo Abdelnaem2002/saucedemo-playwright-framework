@@ -169,25 +169,6 @@ await inventoryPage.expectLoaded();
 
 If the login button changes, you update `LoginPage.ts` once instead of every test. Assertions about page state (`expectLoaded`, `expectError`) live in page objects; business-level assertions stay in the tests. See [`docs/LEARNING_GUIDE.md`](docs/LEARNING_GUIDE.md) for a detailed walkthrough.
 
-## 17. GitHub Actions / CI Integration
-
-`.github/workflows/playwright.yml` runs on every push and pull request to `main`/`master`: install → type check → install browsers → run tests → publish a Markdown summary → upload the HTML report and traces as artifacts. To view them: GitHub → **Actions** → select the run → **Artifacts**. In CI, tests retry twice and use 2 workers.
-
-## 18. Known Limitations
-
-- Tests depend on the public SauceDemo site being online; its behaviour may change without notice.
-- Boundary tests for checkout document the app's *current* behaviour (it accepts any text); they are not derived from a written specification.
-- No registration or search tests, because the app has neither.
-- Login is performed through the UI for every test using the logged-in fixture (simple, but slower than reusing a saved session).
-- Visual, accessibility, performance and API testing are out of scope.
-
-## 19. Future Improvements
-
-- Reuse authentication with Playwright `storageState` to speed up tests.
-- Add accessibility checks (`@axe-core/playwright`).
-- Add visual comparison (`toHaveScreenshot`).
-- Add tests for other SauceDemo users (`problem_user`, `performance_glitch_user`).
-- Publish the HTML report to GitHub Pages.
 
 ## 20. Author / Contact
 
