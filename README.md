@@ -167,10 +167,3 @@ await loginPage.login(users.standard.username, users.standard.password);
 await inventoryPage.expectLoaded();
 ```
 
-If the login button changes, you update `LoginPage.ts` once instead of every test. Assertions about page state (`expectLoaded`, `expectError`) live in page objects; business-level assertions stay in the tests. See [`docs/LEARNING_GUIDE.md`](docs/LEARNING_GUIDE.md) for a detailed walkthrough.
-
-
-
-- **GitHub:** https://github.com/YOUR_GITHUB_USERNAME
-- **LinkedIn:** https://www.linkedin.com/in/YOUR_LINKEDIN_ID
-- **Email:** your.email@example.com
